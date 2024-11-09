@@ -26,5 +26,5 @@ alias v='nvim'
 eval "$(starship init zsh)"
 
 if [ "$(tty)" = "/dev/tty1" ];then
-  exec Hyprland
+  exec startx
 fi

@@ -94,7 +94,7 @@ Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
 [username]
-show_always = true
+show_always = false
 style_user = "bg:surface0 fg:text"
 style_root = "bg:surface0 fg:text"
 format = '[ $user ]($style)'
