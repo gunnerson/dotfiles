@@ -9,14 +9,13 @@
        "y": 44
     },
     "marks": [],
-    "name": "i3 - ArchWiki - Google Chrome",
+    "name": "Google Chrome",
     "percent": 1,
     "swallows": [
        {
        "class": "^Google\\-chrome$",
        "instance": "^google\\-chrome$",
        "machine": "^archer$",
-       "title": "^i3\\ \\-\\ ArchWiki\\ \\-\\ Google\\ Chrome$",
        "window_role": "^browser$"
        }
     ],

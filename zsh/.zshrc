@@ -17,6 +17,13 @@ zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
 compinit
 
+if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    . /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
+fi
+
+WORDCHARS=${WORDCHARS//\/}
+
 alias ll="ls -lh"
 alias la="ls -lah"
 alias v='nvim'
@@ -25,6 +32,14 @@ alias mkd="mkdir -p"
 alias du="du -sh"
 
 # source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+for f in ~/.local-vars/* ; do
+  set -a
+  . "$f"
+  set +a
+done
+unset f
+
 
 eval "$(starship init zsh)"
 

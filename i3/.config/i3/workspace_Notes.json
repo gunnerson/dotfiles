@@ -9,14 +9,13 @@
        "y": 44
     },
     "marks": [],
-    "name": "Welcome - archer - Obsidian v1.7.5",
+    "name": "Obsidian",
     "percent": 1,
     "swallows": [
        {
        "class": "^obsidian$",
        "instance": "^obsidian$",
        "machine": "^archer$",
-       "title": "^Welcome\\ \\-\\ archer\\ \\-\\ Obsidian\\ v1\\.7\\.5$",
        "window_role": "^browser\\-window$"
        }
     ],
