@@ -11,7 +11,7 @@ setopt hist_verify
 unsetopt beep
 bindkey -v
 
-source <(fzf --zsh)
+WORDCHARS=${WORDCHARS//\/}
 
 zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
@@ -22,16 +22,16 @@ if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; th
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
 fi
 
-WORDCHARS=${WORDCHARS//\/}
-
 alias ll="ls -lh"
 alias la="ls -lah"
 alias v='nvim'
 alias tr="tree -Ca"
 alias mkd="mkdir -p"
 alias du="du -sh"
+alias wgup='nordvpn d && sudo wg-quick up wg0'
+alias wgdn='sudo wg-quick down wg0 && nordvpn c'
 
-# source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# . /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 for f in ~/.local-vars/* ; do
   set -a
@@ -40,6 +40,7 @@ for f in ~/.local-vars/* ; do
 done
 unset f
 
+. <(fzf --zsh)
 
 eval "$(starship init zsh)"
 
