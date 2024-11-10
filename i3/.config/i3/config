@@ -55,10 +55,13 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# append layout
+bindsym $mod+g exec ~/.load_layout.sh
+
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+# bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -134,9 +137,9 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "Term"
-set $ws2 "Web"
-set $ws3 "Code"
-set $ws4 "AUX-4"
+set $ws2 "Vim"
+set $ws3 "Web"
+set $ws4 "Notes"
 set $ws5 "AUX-5"
 set $ws6 "AUX-6"
 set $ws7 "AUX-7"
@@ -203,7 +206,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # theme
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 # target                 title     bg    text   indicator  border
 client.focused           $lavender $base $text  $rosewater $lavender
 client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
