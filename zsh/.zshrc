@@ -24,7 +24,9 @@ fi
 
 alias ll="ls -lh"
 alias la="ls -lah"
+alias hgr="history 0 | grep"
 alias v='nvim'
+alias z='zellij'
 alias tr="tree -Ca"
 alias mkd="mkdir -p"
 alias du="du -sh"
@@ -44,6 +46,6 @@ unset f
 
 eval "$(starship init zsh)"
 
-if [ "$(tty)" = "/dev/tty1" ];then
-  exec startx
-fi
+# if [ "$(tty)" = "/dev/tty1" ];then
+#   exec startx
+# fi
