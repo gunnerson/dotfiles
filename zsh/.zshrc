@@ -2,6 +2,8 @@ HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
 
+export PATH="$PATH:$HOME/.bin"
+
 setopt autocd
 setopt correct
 setopt inc_append_history
@@ -11,7 +13,7 @@ setopt hist_verify
 unsetopt beep
 bindkey -v
 
-WORDCHARS=${WORDCHARS//\/}
+export VISUAL=nvim
 
 zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
@@ -24,14 +26,20 @@ fi
 
 alias ll="ls -lh"
 alias la="ls -lah"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias cat="bat"
+alias cl="clear"
 alias hgr="history 0 | grep"
 alias v='nvim'
 alias z='zellij'
 alias tr="tree -Ca"
 alias mkd="mkdir -p"
 alias du="du -sh"
-alias wgup='nordvpn d && sudo wg-quick up wg0'
+alias wgup='nordvpn d && sudo wg-quick up wg0 && sudo mount -a'
 alias wgdn='sudo wg-quick down wg0 && nordvpn c'
+alias gitq='git add -u && git commit -m "Update $(date +%F)" && git push'
 
 # . /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 

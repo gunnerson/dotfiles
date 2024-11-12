@@ -56,7 +56,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # append layout
-bindsym $mod+g exec ~/.load_layout.sh
+bindsym $mod+g exec ~/.bin/lola
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
