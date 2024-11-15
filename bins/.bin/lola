@@ -1,0 +1,13 @@
+#!/bin/sh
+i3-msg "workspace --no-auto-back-and-forth Term;  append_layout ~/.config/i3/workspace_Term.json"
+i3-msg "workspace --no-auto-back-and-forth Vim;   append_layout ~/.config/i3/workspace_Vim.json"
+i3-msg "workspace --no-auto-back-and-forth Web;   append_layout ~/.config/i3/workspace_Web.json"
+i3-msg "workspace --no-auto-back-and-forth Notes; append_layout ~/.config/i3/workspace_Notes.json"
+i3-msg "workspace --no-auto-back-and-forth Notes; append_layout ~/.config/i3/workspace_KP.json"
+
+(alacritty &)
+(alacritty &)
+(google-chrome-stable &)
+(obsidian &)
+(keepassxc &)
+
