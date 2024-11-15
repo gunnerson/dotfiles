@@ -1,3 +1,12 @@
 return {
-  "williamboman/mason.nvim"
+  'williamboman/mason.nvim',
+  opts = {
+    ensure_installed = {
+      'black',
+      'debugpy',
+      'mypy',
+      'ruff',
+      'pyright',
+    },
+  },
 }
