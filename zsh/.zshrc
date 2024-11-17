@@ -1,5 +1,5 @@
 HISTFILE=~/.histfile
-HISTSIZE=100000
+HISTSIZE=1000
 SAVEHIST=100000
 
 export PATH="$PATH:$HOME/.bin"
@@ -53,6 +53,10 @@ unset f
 . <(fzf --zsh)
 
 eval "$(starship init zsh)"
+
+# if uwsm check may-start; then
+#   exec uwsm start hyprland.desktop
+# fi
 
 # if [ "$(tty)" = "/dev/tty1" ];then
 #   exec startx
