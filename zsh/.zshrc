@@ -2,8 +2,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=100000
 
-export PATH="$PATH:$HOME/.bin"
-
 setopt autocd
 setopt correct
 setopt inc_append_history
@@ -14,6 +12,8 @@ unsetopt beep
 bindkey -v
 
 export VISUAL=nvim
+export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
+export PATH=$PATH:$HOME/.local/share/bin
 
 zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
@@ -39,7 +39,7 @@ alias mkd="mkdir -p"
 alias du="du -sh"
 alias wgup='nordvpn d && sudo wg-quick up wg0 && sudo mount -a'
 alias wgdn='sudo wg-quick down wg0 && nordvpn c'
-alias gitq='git add -u && git commit -m "Update $(date +%F)" && git push'
+alias gitq='git add -u; git commit -m "Update $(date +%F)"; git push'
 
 # . /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
