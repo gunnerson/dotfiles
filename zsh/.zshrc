@@ -40,6 +40,7 @@ alias du="du -sh"
 alias wgup='nordvpn d && sudo wg-quick up wg0 && sudo mount -a'
 alias wgdn='sudo wg-quick down wg0 && nordvpn c'
 alias gitq='git add -u; git commit -m "Update $(date +%F)"; git push'
+alias jscdn="rsync --archive -hh --partial --info=stats1,progress2 --delete /mnt/bnas/public/share/schnee/ ~/jsc"
 
 # . /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
@@ -51,6 +52,15 @@ done
 unset f
 
 . <(fzf --zsh)
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 eval "$(starship init zsh)"
 
