@@ -32,12 +32,12 @@ return {
       require('null-ls').setup {
         sources = {
           require('null-ls').builtins.formatting.black,
-          require('null-ls').builtins.diagnostics.mypy.with {
-            extra_args = function()
-              local virtual = os.getenv 'VIRTUAL_ENV' or os.getenv 'CONDA_PREFIX' or '/usr'
-              return { '--python-executable', virtual .. '/bin/python' }
-            end,
-          },
+          -- require('null-ls').builtins.diagnostics.mypy.with {
+          --   extra_args = function()
+          --     local virtual = os.getenv 'VIRTUAL_ENV' or os.getenv 'CONDA_PREFIX' or '/usr'
+          --     return { '--python-executable', virtual .. '/bin/python' }
+          --   end,
+          -- },
         },
       }
     end,

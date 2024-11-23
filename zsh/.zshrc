@@ -24,21 +24,24 @@ if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; th
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
 fi
 
-alias ll="ls -lh"
-alias la="ls -lah"
+alias ll="ls --color -lh"
+alias la="ls --color -lah"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias cat="bat"
 alias cl="clear"
 alias hgr="history 0 | grep"
+alias cat='bat --paging=never'
 alias v='nvim'
 alias z='zellij'
+alias zl="zellij --layout"
+alias za="zellij attach"
 alias tr="tree -Ca"
 alias mkd="mkdir -p"
 alias du="du -sh"
 alias fh="feh -Fq --on-last-slide hold ."
 alias Y='yazi'
+alias bm='bashmount'
 alias wgup='nordvpn d && sudo wg-quick up wg0 && sudo mount -a'
 alias wgdn='sudo wg-quick down wg0 && nordvpn c'
 alias gitq='git add -u; git commit -m "Update $(date +%F)"; git push'
@@ -73,3 +76,10 @@ eval "$(starship init zsh)"
 # if [ "$(tty)" = "/dev/tty1" ];then
 #   exec startx
 # fi
+
+# bun completions
+[ -s "/home/rumata/.bun/_bun" ] && source "/home/rumata/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$PATH:$BUN_INSTALL/bin"
