@@ -33,11 +33,11 @@ alias ....="cd ../../.."
 alias cl="clear"
 alias hgr="history 0 | grep"
 alias cat='bat --paging=never'
-alias v='nvim'
+alias vi='nvim'
 alias z='zellij'
 alias zl="zellij --layout"
 alias za="zellij attach"
-alias tr="tree -Ca"
+alias tree="tree -Ca"
 alias mkd="mkdir -p"
 alias du="du -sh"
 alias fh="feh -Fq --on-last-slide hold ."

@@ -6,6 +6,9 @@ wrap = "yes"
 image_delay = 0
 
 [opener]
+open = [
+    { run = 'xdg-open "$@"', orphan = true, desc = "Open" },
+]
 images_preview = [
     { run = 'feh -Fq --start-at "$@" --on-last-slide hold .', desc = "Preview" },
 ]

@@ -99,6 +99,16 @@ return {
           desc = 'LSP: Disable hover capability from Ruff',
         })
 
+        vim.api.nvim_create_user_command('DiagnosticToggle', function()
+          local config = vim.diagnostic.config
+          local vt = config().virtual_text
+          config {
+            virtual_text = not vt,
+            underline = not vt,
+            signs = not vt,
+          }
+        end, { desc = 'toggle diagnostic' })
+
         -- The following code creates a keymap to toggle inlay hints in your
         -- code, if the language server you are using supports them
         --
@@ -143,12 +153,22 @@ return {
           },
           python = {
             analysis = {
-              ignore = { '*' },
+              -- ignore = { '*' },
             },
           },
         },
       },
-      ruff = {},
+      ruff = {
+        init_options = {
+          settings = {
+            lint = {
+              args = {
+                '--ignore=F403,',
+              },
+            },
+          },
+        },
+      },
       -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
