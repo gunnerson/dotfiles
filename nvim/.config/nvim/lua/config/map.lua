@@ -40,3 +40,7 @@ vim.keymap.set('n', '<leader>os', ':Telescope find_files search_dirs={"~/vaults/
 vim.keymap.set('n', '<leader>oz', ':Telescope live_grep search_dirs={"~/vaults/personal/"}<cr>', { desc = 'Live grep search' })
 vim.keymap.set('n', '<leader>of', ':s/\\(# \\)[^_]*_/\\1/ | s/-/ /g<cr>', { desc = 'Format title' })
 vim.keymap.set('n', '<leader>odd', ":!rm '%:p'<cr>:bd<cr>", { desc = 'Delete note' })
+
+vim.keymap.set('n', '<leader>td', function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = 'Toggle diagnostics', silent = true, noremap = true })
