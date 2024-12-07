@@ -30,6 +30,7 @@ alias la="ls --color -lah"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias sshk="kitten ssh"
 alias cl="clear"
 alias hgr="history 0 | grep"
 alias cat='bat --paging=never'
