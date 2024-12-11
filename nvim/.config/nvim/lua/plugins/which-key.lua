@@ -50,6 +50,8 @@ return { -- Useful plugin to show you pending keybinds.
       { '<leader>o', group = '[O]bsidian' },
       -- { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       { '<leader>h', group = '[H]arpoon' },
+      { '<leader>g', group = '[G]it' },
+      { '<leader>u', group = '[U]I' },
     },
   },
 }
