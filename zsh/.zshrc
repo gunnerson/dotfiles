@@ -45,13 +45,13 @@ alias fh="feh -Fq --on-last-slide hold ."
 alias Y='yazi'
 alias bm='bashmount'
 alias wgup='nordvpn d && sudo wg-quick up wg0 && sudo mount -a'
-alias wgdn='sudo wg-quick down wg0 && nordvpn c'
+alias wgdn='sudo wg-quick down wg0'
 alias gitq='git add -u; git commit -m "Update $(date +%F)"; git push'
 alias jscdn="rsync --archive -hh --partial --info=stats1,progress2 --delete /mnt/bnas/public/share/schnee/ ~/jsc"
 
 # . /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-for f in ~/.local-vars/* ; do
+for f in /home/rumata/.local-vars/* ; do
   set -a
   . "$f"
   set +a
