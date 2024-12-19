@@ -25,6 +25,8 @@ if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; th
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
 fi
 
+alias rm='rm -i'
+alias mv='mv -i'
 alias ll="ls --color -lh"
 alias la="ls --color -lah"
 alias ..="cd .."
@@ -47,7 +49,6 @@ alias bm='bashmount'
 alias wgup='nordvpn d && sudo wg-quick up wg0 && sudo mount -a'
 alias wgdn='sudo wg-quick down wg0'
 alias gitq='git add -u; git commit -m "Update $(date +%F)"; git push'
-alias jscdn="rsync --archive -hh --partial --info=stats1,progress2 --delete /mnt/bnas/public/share/schnee/ ~/jsc"
 
 # . /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
@@ -70,10 +71,6 @@ function y() {
 }
 
 eval "$(starship init zsh)"
-
-# if uwsm check may-start; then
-#   exec uwsm start hyprland.desktop
-# fi
 
 # if [ "$(tty)" = "/dev/tty1" ];then
 #   exec startx
