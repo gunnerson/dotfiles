@@ -35,7 +35,7 @@ alias ....="cd ../../.."
 alias sshk="kitten ssh"
 alias cl="clear"
 alias hgr="history 0 | grep"
-alias cat='bat --paging=never'
+alias cat='bat --paging=never -p'
 alias vi='nvim'
 alias z='zellij'
 alias zl="zellij --layout"
@@ -46,7 +46,7 @@ alias du="du -sh"
 alias fh="feh -Fq --on-last-slide hold ."
 alias Y='yazi'
 alias bm='bashmount'
-alias wgup='nordvpn d && sudo wg-quick up wg0 && sudo mount -a'
+alias wgup='nordvpn d && sudo wg-quick up wg0'
 alias wgdn='sudo wg-quick down wg0'
 alias gitq='git add -u; git commit -m "Update $(date +%F)"; git push'
 
