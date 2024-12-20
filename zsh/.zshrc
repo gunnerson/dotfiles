@@ -32,9 +32,9 @@ alias la="ls --color -lah"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias sshk="kitten ssh"
 alias cl="clear"
 alias hgr="history 0 | grep"
+alias bat='bat -p'
 alias cat='bat --paging=never -p'
 alias vi='nvim'
 alias z='zellij'
@@ -49,9 +49,9 @@ alias bm='bashmount'
 alias wgup='nordvpn d && sudo wg-quick up wg0'
 alias wgdn='sudo wg-quick down wg0'
 alias gitq='git add -u; git commit -m "Update $(date +%F)"; git push'
+alias gits='git status'
 
-# . /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
+# Set environment varibles
 for f in /home/rumata/.local-vars/* ; do
   set -a
   . "$f"
@@ -59,26 +59,28 @@ for f in /home/rumata/.local-vars/* ; do
 done
 unset f
 
+# fzf
 . <(fzf --zsh)
 
+# yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
+	builtin cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"
 }
 
+# Starship
 eval "$(starship init zsh)"
 
+# X11 autostart
 # if [ "$(tty)" = "/dev/tty1" ];then
 #   exec startx
 # fi
 
-# bun completions
+# bun 
 [ -s "/home/rumata/.bun/_bun" ] && source "/home/rumata/.bun/_bun"
-
-# bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$PATH:$BUN_INSTALL/bin"
