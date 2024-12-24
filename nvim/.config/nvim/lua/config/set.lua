@@ -24,6 +24,3 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 -- vim.opt.conceallevel = 2
-vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
-end)
