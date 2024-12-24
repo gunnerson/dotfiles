@@ -114,13 +114,17 @@ return { -- Autocompletion
       },
     }
   end,
-  opts = function()
-    return {
-      formatting = {
-        format = require('lspkind').cmp_format {
-          before = require('tailwind-tools.cmp').lspkind_format,
-        },
+  opts = function(_, opts)
+    opts.formatting = opts.formatting or {}
+    table.insert(opts.formatting, {
+      format = require('lspkind').cmp_format {
+        before = require('tailwind-tools.cmp').lspkind_format,
       },
-    }
+    })
+    opts.sources = opts.sources or {}
+    table.insert(opts.sources, {
+      name = 'lazydev',
+      group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+    })
   end,
 }
