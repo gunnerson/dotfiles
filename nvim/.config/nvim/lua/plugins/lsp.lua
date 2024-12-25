@@ -140,6 +140,7 @@ return {
       'lua-language-server',
       'typescript-language-server',
       'shfmt',
+      'codelldb',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
     ---@diagnostic disable-next-line: missing-fields

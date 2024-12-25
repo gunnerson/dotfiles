@@ -51,14 +51,6 @@ alias wgdn='sudo wg-quick down wg0'
 alias gitq='git add -u; git commit -m "Update $(date +%F)"; git push'
 alias gits='git status'
 
-# Set environment varibles
-for f in /home/bwaargh/.local-vars/*; do
-	set -a
-	. "$f"
-	set +a
-done
-unset f
-
 # fzf
 . <(fzf --zsh)
 
@@ -84,3 +76,11 @@ eval "$(starship init zsh)"
 [ -s "/home/rumata/.bun/_bun" ] && source "/home/rumata/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$PATH:$BUN_INSTALL/bin"
+
+# Set environment varibles
+for f in ~/.local-vars/*; do
+	set -a
+	. "$f"
+	set +a
+done
+unset f

@@ -33,7 +33,7 @@ vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Center first search item' })
 
 vim.keymap.set('x', '<leader>p', 'p', { desc = 'Yank and paste' })
 vim.keymap.set('x', 'p', [["_dP]], { desc = 'Paste without yanking' })
-vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete without yanking' })
+-- vim.keymap.set({ 'n', 'v' }, '<leader>D', [["_d]], { desc = 'Delete without yanking' })
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank to clipboard' })
 vim.keymap.set({ 'n', 'v' }, '<leader>Y', [["+Y]], { desc = 'Yank line to clipboard' })
 

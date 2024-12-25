@@ -7,8 +7,10 @@ return { -- Highlight, edit, and navigate code
     ensure_installed = {
       'bash',
       'c',
+      'cpp',
       'diff',
       'html',
+      'htmldjango',
       'lua',
       'luadoc',
       'markdown',
@@ -20,6 +22,7 @@ return { -- Highlight, edit, and navigate code
       'sql',
       'javascript',
       'python',
+      'css',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
