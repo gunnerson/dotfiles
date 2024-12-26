@@ -21,8 +21,8 @@ autoload -Uz compinit
 compinit
 
 if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    . /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
+	. /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+	ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
 fi
 
 alias rm='rm -i'
@@ -33,31 +33,25 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cl="clear"
+alias susp="systemctl suspend"
+alias sudo='sudo '
 alias hgr="history 0 | grep"
 alias bat='bat -p'
 alias cat='bat --paging=never -p'
 alias vi='nvim'
-alias z='zellij'
-alias zl="zellij --layout"
-alias za="zellij attach"
 alias tree="tree -Ca"
 alias mkd="mkdir -p"
 alias du="du -sh"
 alias fh="feh -Fq --on-last-slide hold ."
 alias Y='yazi'
 alias bm='bashmount'
+alias scr='grim -g "$(slurp)"'
 alias wgup='nordvpn d && sudo wg-quick up wg0'
 alias wgdn='sudo wg-quick down wg0'
 alias gitq='git add -u; git commit -m "Update $(date +%F)"; git push'
 alias gits='git status'
-
-# Set environment varibles
-for f in /home/rumata/.local-vars/* ; do
-  set -a
-  . "$f"
-  set +a
-done
-unset f
+alias hday='kill $(ps aux | grep "hyprsunset" | awk "{print $2}")'
+alias hnight='nohup hyprsunset -t 2700'
 
 # fzf
 . <(fzf --zsh)
@@ -67,7 +61,7 @@ function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-	builtin cd -- "$cwd"
+		builtin cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"
 }
@@ -80,7 +74,15 @@ eval "$(starship init zsh)"
 #   exec startx
 # fi
 
-# bun 
+# bun
 [ -s "/home/rumata/.bun/_bun" ] && source "/home/rumata/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$PATH:$BUN_INSTALL/bin"
+
+# Set environment varibles
+for f in ~/.local-vars/*; do
+	set -a
+	. "$f"
+	set +a
+done
+unset f
