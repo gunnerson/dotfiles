@@ -50,8 +50,8 @@ alias wgup='nordvpn d && sudo wg-quick up wg0'
 alias wgdn='sudo wg-quick down wg0'
 alias gitq='git add -u; git commit -m "Update $(date +%F)"; git push'
 alias gits='git status'
-alias hday='kill $(ps aux | grep "hyprsunset" | awk "{print $2}")'
-alias hnight='nohup hyprsunset -t 2700 &'
+alias hday='pkill "hyprsunset"'
+alias hnight='nohup hyprsunset -t 2700 > /dev/null 2>&1 &'
 
 # fzf
 . <(fzf --zsh)
