@@ -127,7 +127,7 @@ return {
       type = 'server',
       port = '${port}',
       executable = {
-        command = '/home/viktor/.local/share/nvim/mason/packages/codelldb/codelldb',
+        command = '/home/rumata/.local/share/nvim/mason/packages/codelldb/codelldb',
         args = { '--port', '${port}' },
       },
     }
