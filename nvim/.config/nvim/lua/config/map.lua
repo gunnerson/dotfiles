@@ -17,7 +17,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set({ 'n', 'i' }, '<S-up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set({ 'n', 'i' }, '<up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set({ 'n', 'i' }, '<S-down>', '<cmd>echo "Use j to move!!"<CR>')
 vim.keymap.set({ 'n', 'i' }, '<down>', '<cmd>echo "Use j to move!!"<CR>')
 -- vim.keymap.set('n', '<up>', 'gk')
 -- vim.keymap.set('n', '<down>', 'gj')

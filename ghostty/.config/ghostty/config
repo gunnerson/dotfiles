@@ -1,0 +1,4 @@
+font-size = 14
+window-decoration = false
+shell-integration = zsh
+scrollback-limit = 10000
