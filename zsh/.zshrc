@@ -1,13 +1,21 @@
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# : History {{{
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=100000
-
-setopt autocd
-setopt correct
 setopt inc_append_history
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_verify
+
+# : }}}
+
+# : Options {{{
+
+setopt autocd
+setopt correct
 unsetopt beep
 bindkey -v
 bindkey -a '^[[3~' delete-char
@@ -24,6 +32,10 @@ if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; th
 	. /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 	ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
 fi
+
+# : }}}
+
+# : Aliases {{{
 
 alias rm='rm -i'
 alias mv='mv -i'
@@ -43,7 +55,6 @@ alias tree="tree -Ca"
 alias mkd="mkdir -p"
 alias du="du -sh"
 alias fh="feh -Fq --on-last-slide hold ."
-alias Y='yazi'
 alias bm='bashmount'
 alias scr='grim -g "$(slurp)"'
 alias wgup='nordvpn d && sudo wg-quick up wg0'
@@ -53,7 +64,10 @@ alias gits='git status'
 alias hday='pkill "hyprsunset"'
 alias hnight='nohup hyprsunset -t 2700 > /dev/null 2>&1 &'
 
-# fzf
+# : }}}
+
+# : fzf {{{
+
 source <(fzf --zsh)
 export FZF_COMPLETION_OPTS='--border --info=inline'
 export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'
@@ -76,7 +90,10 @@ _fzf_comprun() {
 	esac
 }
 
-# yazi
+# : }}}
+
+# : yazi {{{
+
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -86,23 +103,29 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-# Starship
+# : }}}
+
+# : Starship {{{
+
 eval "$(starship init zsh)"
 
-# X11 autostart
-# if [ "$(tty)" = "/dev/tty1" ];then
-#   exec startx
-# fi
+# : }}}
 
-# bun
+# : bun {{{
+
 [ -s "/home/rumata/.bun/_bun" ] && source "/home/rumata/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$PATH:$BUN_INSTALL/bin"
 
-# Set environment varibles
+# : }}}
+
+# : Environment varibles {{{
+
 for f in ~/.local-vars/*; do
 	set -a
 	. "$f"
 	set +a
 done
 unset f
+
+# : }}}
