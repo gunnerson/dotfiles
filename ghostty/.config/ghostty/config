@@ -1,4 +1,5 @@
 font-size = 14
 window-decoration = false
 shell-integration = zsh
-scrollback-limit = 10000
+scrollback-limit = 4294967290
+theme = tokyonight

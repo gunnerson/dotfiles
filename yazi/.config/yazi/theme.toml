@@ -1,5 +1,14 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
+# : Flavor {{{
+
+[flavor]
+use = "tokyo-night"
+dark = "tokyo-night"
+
+# : }}}
+
+
 # : Manager {{{
 
 [manager]
@@ -28,7 +37,7 @@ border_symbol = "│"
 border_style = { fg = "#524f67" }
 
 # Highlighting
-syntect_theme = "~/.config/yazi/rose-pine.tmTheme"
+# syntect_theme = "~/.config/yazi/rose-pine.tmTheme"
 
 # : }}}
 
@@ -143,3 +152,5 @@ rules = [
 ]
 
 # : }}}
+
+
