@@ -45,6 +45,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cl="clear"
+alias open="xdg-open"
 alias susp="systemctl suspend"
 alias sudo='sudo '
 alias hgr="history 0 | grep"
