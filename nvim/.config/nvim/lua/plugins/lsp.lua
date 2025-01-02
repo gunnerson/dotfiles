@@ -133,6 +133,9 @@ return {
       bashls = {
         filetypes = { 'sh', 'zsh' },
       },
+      yamlls = {},
+      tailwindcss = {},
+      dockerls = {},
       lua_ls = {
         settings = {
           Lua = {
@@ -152,6 +155,7 @@ return {
       'typescript-language-server',
       'shfmt',
       'codelldb',
+      'clang-format',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
     ---@diagnostic disable-next-line: missing-fields
