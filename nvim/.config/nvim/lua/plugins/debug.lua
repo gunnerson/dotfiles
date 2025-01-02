@@ -130,6 +130,7 @@ return {
       port = '${port}',
       executable = {
         command = vim.fn.expand(codelldb),
+        command = '/home/rumata/.local/share/nvim/mason/packages/codelldb/codelldb',
         args = { '--port', '${port}' },
       },
     }

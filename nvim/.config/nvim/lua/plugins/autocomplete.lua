@@ -13,6 +13,12 @@ return {
         nerd_font_variant = 'mono',
       },
 
+      completion = {
+        list = {
+          selection = 'auto_insert',
+        },
+      },
+
       signature = { enabled = true },
     },
   },
