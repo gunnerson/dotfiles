@@ -1,0 +1,28 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="Servers" {
+        pane stacked=true {
+            pane expanded=true {
+                cwd "~/dev/rumata/backend/"
+                command "zsh"
+                args "-c" "source env/bin/activate && python app/manage.py runserver 127.0.0.1:8000"
+            }
+            pane {
+                cwd "~/dev/rumata/frontend/"
+                command "zsh"
+                args "-c" "npm run dev"
+            }
+            pane {
+                cwd "~/dev/rumata/"
+            }
+        }
+    }
+}
