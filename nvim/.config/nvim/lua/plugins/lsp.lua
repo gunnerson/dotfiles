@@ -98,13 +98,17 @@ return {
         on_attach = function()
           vim.keymap.set("n", "<A-o>", "<CMD>ClangdSwitchSourceHeader<CR>", { buffer = 0 })
         end,
-        options = { shiftwidth = 2, tabstop = 2 },
       },
       pyright = {
         settings = {
           pyright = {
             disableOrganizeImports = true,
           },
+          -- python = {
+          --   analysis = {
+          --     ignore = { "*" },
+          --   },
+          -- },
         },
       },
       ruff = {
@@ -147,6 +151,7 @@ return {
       "shfmt",
       "codelldb",
       "clang-format",
+      "djlint",
     })
     require("mason-tool-installer").setup { ensure_installed = ensure_installed }
     ---@diagnostic disable-next-line: missing-fields

@@ -18,7 +18,8 @@ setopt autocd
 setopt correct
 unsetopt beep
 bindkey -v
-bindkey -a '^[[3~' delete-char
+bindkey "\e[3~" delete-char
+bindkey -M vicmd "\e[3~" delete-char
 
 export VISUAL=nvim
 export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
@@ -46,7 +47,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cl="clear"
 alias open="xdg-open"
-alias susp="systemctl suspend"
+alias susp="swaylock -f -c 000000 && systemctl suspend"
 alias sudo='sudo '
 alias hgr="history 0 | grep"
 alias bat='bat -p'
@@ -113,6 +114,12 @@ eval "$(starship init zsh)"
 
 # : }}}
 
+# : zoxide {{{
+
+eval "$(zoxide init --cmd cd zsh)"
+
+# : }}}
+
 # : bun {{{
 
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
@@ -123,7 +130,7 @@ export PATH="$PATH:$BUN_INSTALL/bin"
 
 # : Environment varibles {{{
 
-if [ -d '~/.local-vars' ]; then
+if [ -d ~/.local-vars ]; then
     for f in ~/.local-vars/*; do
         set -a
         . "$f"
