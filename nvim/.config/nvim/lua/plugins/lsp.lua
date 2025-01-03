@@ -98,12 +98,16 @@ return {
         on_attach = function()
           vim.keymap.set("n", "<A-o>", "<CMD>ClangdSwitchSourceHeader<CR>", { buffer = 0 })
         end,
-        options = { shiftwidth = 2, tabstop = 2 },
       },
       pyright = {
         settings = {
           pyright = {
             disableOrganizeImports = true,
+          },
+          python = {
+            analysis = {
+              ignore = { "*" },
+            },
           },
         },
       },
@@ -111,7 +115,7 @@ return {
         init_options = {
           settings = {
             lint = {
-              enable = false,
+              -- enable = false,
               args = {
                 "--ignore=F403,",
               },
