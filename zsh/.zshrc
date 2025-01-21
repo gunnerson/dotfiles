@@ -18,7 +18,8 @@ setopt autocd
 setopt correct
 unsetopt beep
 bindkey -v
-bindkey -a '^[[3~' delete-char
+bindkey "\e[3~" delete-char
+bindkey -M vicmd "\e[3~" delete-char
 
 export VISUAL=nvim
 export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons

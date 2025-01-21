@@ -1,25 +1,21 @@
 return {
-  {
-    'saghen/blink.cmp',
-    dependencies = 'rafamadriz/friendly-snippets',
+  "saghen/blink.cmp",
+  dependencies = "rafamadriz/friendly-snippets",
+  version = "*",
 
-    version = 'v0.*',
+  ---@module 'blink.cmp'
+  ---@type blink.cmp.Config
+  opts = {
+    keymap = { preset = "default" },
 
-    opts = {
-      keymap = { preset = 'default' },
+    appearance = {
+      use_nvim_cmp_as_default = true,
+      nerd_font_variant = "mono",
+    },
 
-      appearance = {
-        use_nvim_cmp_as_default = true,
-        nerd_font_variant = 'mono',
-      },
-
-      completion = {
-        list = {
-          selection = 'auto_insert',
-        },
-      },
-
-      signature = { enabled = true },
+    sources = {
+      default = { "lsp", "path", "snippets", "buffer" },
     },
   },
+  opts_extend = { "sources.default" },
 }
