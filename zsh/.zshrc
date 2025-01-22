@@ -124,11 +124,13 @@ export PATH="$PATH:$BUN_INSTALL/bin"
 
 # : Environment varibles {{{
 
-for f in ~/.local-vars/*; do
-    set -a
-    . "$f"
-    set +a
-done
-unset f
+if [ -d ~/.local-vars ]; then
+    for f in ~/.local-vars/*; do
+        set -a
+        . "$f"
+        set +a
+    done
+    unset f
+fi
 
 # : }}}
