@@ -24,6 +24,7 @@ bindkey -M vicmd "\e[3~" delete-char
 export VISUAL=nvim
 export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
 export PATH=$PATH:$HOME/.local/share/bin
+export SUDO_PROMPT="$(tput setaf 1 bold)Password:$(tput sgr0) "
 
 zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
@@ -49,6 +50,7 @@ alias cl="clear"
 alias open="xdg-open"
 alias susp="swaylock -f -c 000000 && systemctl suspend"
 alias sudo='sudo '
+alias sued='SUDO_EDITOR=nvim sudoedit'
 alias hgr="history 0 | grep"
 alias bat='bat -p'
 alias cat='bat --paging=never -p'
