@@ -42,6 +42,10 @@ vim.keymap.set("x", "p", [["_dP]], { desc = "Paste without yanking" })
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank to clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>Y", [["+Y]], { desc = "Yank line to clipboard" })
 
+vim.keymap.set("n", "<leader>nh", function()
+  Snacks.notifier.show_history()
+end, { desc = "Show Notification History" })
+
 vim.keymap.set("n", "<leader>oo", ":cd ~/vaults/personal<CR>", { desc = "Vault dir" })
 vim.keymap.set(
   "n",

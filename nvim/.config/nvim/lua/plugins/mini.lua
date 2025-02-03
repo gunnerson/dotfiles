@@ -21,7 +21,7 @@ return {
       return "%2l:%-2v"
     end
 
-    -- require('mini.pairs').setup()
+    require("mini.pairs").setup()
     --
     require("mini.diff").setup {
       delay = {
