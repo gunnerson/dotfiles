@@ -3,8 +3,8 @@
 # : History {{{
 
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=100000
+HISTSIZE=100000
+SAVEHIST=1000000
 setopt inc_append_history
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
@@ -74,26 +74,6 @@ alias hnight='nohup hyprsunset -t 2700 > /dev/null 2>&1 &'
 # : fzf {{{
 
 source <(fzf --zsh)
-export FZF_COMPLETION_OPTS='--border --info=inline'
-export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'
-export FZF_COMPLETION_DIR_OPTS='--walker dir,follow'
-_fzf_compgen_path() {
-    fd --hidden --follow --exclude ".git" . "$1"
-}
-_fzf_compgen_dir() {
-    fd --type d --hidden --follow --exclude ".git" . "$1"
-}
-_fzf_comprun() {
-    local command=$1
-    shift
-
-    case "$command" in
-    cd) fzf --preview 'tree -C {} | head -200' "$@" ;;
-    export | unset) fzf --preview "eval 'echo \$'{}" "$@" ;;
-    ssh) fzf --preview 'dig {}' "$@" ;;
-    *) fzf --preview 'bat -n --color=always {}' "$@" ;;
-    esac
-}
 
 # : }}}
 
