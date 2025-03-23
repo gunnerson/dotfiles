@@ -7,6 +7,7 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "Oil" })
 vim.keymap.set("n", "<leader>bx", "<cmd>:w | %bd | e#<CR>", { desc = "Close all buffers except current" })
+vim.keymap.set("n", "<C-b>", "<cmd>:bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "<leader>bW", "<cmd>:w !sudo tee > /dev/null %<CR>", { desc = "Force write" })
 vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format, { desc = "Format buffer" })
 

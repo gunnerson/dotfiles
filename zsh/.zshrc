@@ -1,19 +1,14 @@
-# vim:fileencoding=utf-8:foldmethod=marker
-
-# : History {{{
-
+#
+# History {{{1
 HISTFILE=~/.histfile
-HISTSIZE=1000
+HISTSIZE=100000
 SAVEHIST=100000
 setopt inc_append_history
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_verify
 
-# : }}}
-
-# : Options {{{
-
+# Options {{{1
 setopt autocd
 setopt correct
 unsetopt beep
@@ -35,10 +30,7 @@ if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; th
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
 fi
 
-# : }}}
-
-# : Aliases {{{
-
+# Aliases {{{1
 alias rm='rm -i'
 alias mv='mv -i'
 alias ll="ls --color -lh"
@@ -51,28 +43,19 @@ alias open="xdg-open"
 alias susp="swaylock -f -c 000000 && systemctl suspend"
 alias sudo='sudo '
 alias sued='SUDO_EDITOR=nvim sudoedit'
-alias hgr="history 0 | grep"
-alias bat='bat -p'
-alias cat='bat --paging=never -p'
-alias vi='nvim'
+alias cat='bat -pp'
 alias tree="tree -Ca"
 alias mkd="mkdir -p"
 alias du="du -sh"
 alias fh="feh -Fq --on-last-slide hold ."
-alias bm='bashmount'
 alias scr='grim -g "$(slurp)"'
-alias wgup='nordvpn d && sudo wg-quick up wg0'
-alias wgdn='sudo wg-quick down wg0'
 alias gitq='git add .; git commit -m "Update $(date +%F)"; git push'
 alias gits='git status'
 alias gitl='git --no-pager log --oneline --graph'
 alias hday='pkill "hyprsunset"'
 alias hnight='nohup hyprsunset -t 2700 > /dev/null 2>&1 &'
 
-# : }}}
-
-# : fzf {{{
-
+# fzf {{{1
 source <(fzf --zsh)
 export FZF_COMPLETION_OPTS='--border --info=inline'
 export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'
@@ -95,10 +78,7 @@ _fzf_comprun() {
     esac
 }
 
-# : }}}
-
-# : yazi {{{
-
+# yazi {{{1
 function y() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
     yazi "$@" --cwd-file="$tmp"
@@ -108,30 +88,18 @@ function y() {
     rm -f -- "$tmp"
 }
 
-# : }}}
-
-# : Starship {{{
-
+# Starship {{{1
 eval "$(starship init zsh)"
 
-# : }}}
-
-# : zoxide {{{
-
+# zoxide {{{1
 eval "$(zoxide init --cmd cd zsh)"
 
-# : }}}
-
-# : bun {{{
-
+# bun {{{1
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$PATH:$BUN_INSTALL/bin"
 
-# : }}}
-
-# : Environment varibles {{{
-
+# Environment varibles {{{1
 if [ -d ~/.local-vars ]; then
     for f in ~/.local-vars/*; do
         set -a
@@ -140,5 +108,3 @@ if [ -d ~/.local-vars ]; then
     done
     unset f
 fi
-
-# : }}}
