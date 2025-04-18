@@ -24,4 +24,5 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.conceallevel = 2
+vim.opt.foldmethod = "marker"
 vim.g.lazyvim_prettier_needs_config = false

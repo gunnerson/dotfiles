@@ -102,7 +102,7 @@ return {
       pyright = {
         settings = {
           pyright = {
-            disableOrganizeImports = true,
+            -- disableOrganizeImports = true,
           },
           -- python = {
           --   analysis = {

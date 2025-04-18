@@ -1,7 +1,5 @@
-# vim:fileencoding=utf-8:foldmethod=marker
-
-# : History {{{
-
+# vim:foldmethod=marker
+# History {{{1
 HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=1000000
@@ -10,10 +8,7 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_verify
 
-# : }}}
-
-# : Options {{{
-
+# Options {{{1
 setopt autocd
 setopt correct
 unsetopt beep
@@ -36,10 +31,7 @@ if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; th
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#757575'
 fi
 
-# : }}}
-
-# : Aliases {{{
-
+# Aliases {{{1
 alias rm='rm -i'
 alias mv='mv -i'
 alias ll="ls --color -lh"
@@ -69,16 +61,10 @@ alias gitl='git --no-pager log --oneline --graph'
 alias hday='pkill "hyprsunset"'
 alias hnight='nohup hyprsunset -t 2700 > /dev/null 2>&1 &'
 
-# : }}}
-
-# : fzf {{{
-
+# fzf {{{1
 source <(fzf --zsh)
 
-# : }}}
-
-# : yazi {{{
-
+# yazi {{{1
 function y() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
     yazi "$@" --cwd-file="$tmp"
@@ -88,30 +74,18 @@ function y() {
     rm -f -- "$tmp"
 }
 
-# : }}}
-
-# : Starship {{{
-
+# Starship {{{1
 eval "$(starship init zsh)"
 
-# : }}}
-
-# : zoxide {{{
-
+# zoxide {{{1
 eval "$(zoxide init --cmd cd zsh)"
 
-# : }}}
-
-# : bun {{{
-
+# bun {{{1
 [ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$PATH:$BUN_INSTALL/bin"
 
-# : }}}
-
-# : Environment varibles {{{
-
+# Environment varibles {{{1
 if [ -d ~/.local-vars ]; then
     for f in ~/.local-vars/*; do
         set -a
@@ -120,5 +94,3 @@ if [ -d ~/.local-vars ]; then
     done
     unset f
 fi
-
-# : }}}

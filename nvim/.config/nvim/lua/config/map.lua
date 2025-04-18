@@ -21,6 +21,9 @@ vim.keymap.set("i", "<C-j>", "<down>")
 vim.keymap.set("i", "<C-k>", "<up>")
 vim.keymap.set("i", "<C-l>", "<right>")
 
+vim.keymap.set("n", "<C-s>", "v%d%p")
+vim.keymap.set("v", "<C-s>", "%d%p")
+
 vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set({ "n", "i" }, "<S-up>", '<cmd>echo "Use k to move!!"<CR>')
