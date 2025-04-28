@@ -13,5 +13,7 @@ use = "yazi-rs/plugins:max-preview"
 rev = "4a6edc3"
 hash = "ff23e3201e9dac7382992d7b5ddbcb14"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "BennyOe/tokyo-night"
+rev = "695dac6"
+hash = "a8f426ea0d9cb843b081d62ab01364c8"

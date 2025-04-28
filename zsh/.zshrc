@@ -108,3 +108,5 @@ if [ -d ~/.local-vars ]; then
     done
     unset f
 fi
+
+export QSYS_ROOTDIR="/home/bwaargh/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/24.1/quartus/sopc_builder/bin"

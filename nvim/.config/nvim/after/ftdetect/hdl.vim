@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.hdl set filetype=hdl
+autocmd BufNewFile,BufRead *.hdl set filetype=nandhdl

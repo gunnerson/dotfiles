@@ -1,15 +1,15 @@
 return {
-  name = 'Clang C build',
+  name = "Clang C build",
   builder = function()
-    local file = vim.fn.expand '%:p'
-    local ofile = vim.fn.expand '%:p:r'
+    local file = vim.fn.expand "%:p"
+    local ofile = vim.fn.expand "%:p:r"
     return {
-      cmd = { 'clang' },
-      args = { '-glldb', '-fstandalone-debug', file, '-o', ofile },
-      -- components = { { 'on_output_quickfix', open = true }, 'default' },
+      cmd = { "clang" },
+      args = { "-Wall", "-std=c23", "-fsanitize=address", "-g", "-o", ofile, file },
+      -- components = { { "on_output_quickfix", open = true }, "default" },
     }
   end,
   condition = {
-    filetype = { 'c' },
+    filetype = { "c" },
   },
 }
