@@ -93,45 +93,46 @@ return {
     })
 
     local servers = {
-      clangd = {
-        cmd = { "clangd", "--completion-style=detailed" },
-        on_attach = function()
-          vim.keymap.set("n", "<A-o>", "<CMD>ClangdSwitchSourceHeader<CR>", { buffer = 0 })
-        end,
-      },
-      pyright = {
-        settings = {
-          pyright = {
-            disableOrganizeImports = true,
-          },
-          -- python = {
-          --   analysis = {
-          --     ignore = { "*" },
-          --   },
-          -- },
-        },
-      },
-      ruff = {
-        init_options = {
-          settings = {
-            lint = {
-              enable = false,
-              args = {
-                "--ignore=F403,",
-              },
-            },
-          },
-        },
-      },
-      html = {},
-      emmet_language_server = {},
-      bashls = {
-        filetypes = { "sh", "zsh" },
-      },
-      yamlls = {},
-      tailwindcss = {},
-      dockerls = {},
-      prettierd = {},
+      -- clangd = {
+      --   cmd = { "clangd", "--completion-style=detailed" },
+      --   on_attach = function()
+      --     vim.keymap.set("n", "<A-o>", "<CMD>ClangdSwitchSourceHeader<CR>", { buffer = 0 })
+      --   end,
+      -- },
+      -- pyright = {
+      --   settings = {
+      --     pyright = {
+      --       -- disableOrganizeImports = true,
+      --     },
+      --     -- python = {
+      --     --   analysis = {
+      --     --     ignore = { "*" },
+      --     --   },
+      --     -- },
+      --   },
+      -- },
+      -- ruff = {
+      --   init_options = {
+      --     settings = {
+      --       lint = {
+      --         enable = false,
+      --         args = {
+      --           "--ignore=F403,",
+      --         },
+      --       },
+      --     },
+      --   },
+      -- },
+      -- html = {},
+      -- emmet_language_server = {},
+      -- bashls = {
+      --   filetypes = { "sh", "zsh" },
+      -- },
+      -- yamlls = {},
+      -- tailwindcss = {},
+      -- dockerls = {},
+      -- prettierd = {},
+      vhdl_ls = {},
       lua_ls = {
         settings = {
           Lua = {
@@ -148,12 +149,12 @@ return {
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       "stylua",
-      "shfmt",
-      "codelldb",
-      "clang-format",
-      "djlint",
+      -- "shfmt",
+      -- "codelldb",
+      -- "clang-format",
     })
     require("mason-tool-installer").setup { ensure_installed = ensure_installed }
+    ---@diagnostic disable-next-line: missing-fields
     require("mason-lspconfig").setup {
       handlers = {
         function(server_name)

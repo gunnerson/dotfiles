@@ -5,13 +5,13 @@ return {
     "nvim-neotest/nvim-nio",
     "williamboman/mason.nvim",
     "jay-babu/mason-nvim-dap.nvim",
-    {
-      "mfussenegger/nvim-dap-python",
-      ft = "python",
-      config = function()
-        require("dap-python").setup "/usr/bin/python"
-      end,
-    },
+    -- {
+    --   "mfussenegger/nvim-dap-python",
+    --   ft = "python",
+    --   config = function()
+    --     require("dap-python").setup "/usr/bin/python"
+    --   end,
+    -- },
     {
       "stevearc/overseer.nvim",
       opts = {},
@@ -48,8 +48,6 @@ return {
   config = function()
     local dap = require "dap"
     local dapui = require "dapui"
-    local mason_registry = require "mason-registry"
-    local codelldb = mason_registry.get_package("codelldb"):get_install_path() .. "/codelldb"
 
     require("mason-nvim-dap").setup {
       -- Makes a best effort to setup the various debuggers with
@@ -65,8 +63,8 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         "stylua",
-        "python",
-        "codelldb",
+        -- "python",
+        -- "codelldb",
       },
     }
 
@@ -107,7 +105,7 @@ return {
       type = "server",
       port = "${port}",
       executable = {
-        command = vim.fn.expand(codelldb),
+        command = vim.fn.expand "codelldb",
         args = { "--port", "${port}" },
       },
     }

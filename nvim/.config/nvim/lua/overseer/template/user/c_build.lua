@@ -5,8 +5,8 @@ return {
     local ofile = vim.fn.expand "%:p:r"
     return {
       cmd = { "clang" },
-      args = { "-Wall", "-std=c23", "-fsanitize=address", "-g", "-o", ofile, file },
-      -- components = { { "on_output_quickfix", open = true }, "default" },
+      args = { "-Wall", "-fsanitize=address", "-g", "-std=c23", "-o", ofile, file },
+      -- components = { { 'on_output_quickfix', open = true }, 'default' },
     }
   end,
   condition = {

@@ -1,8 +1,8 @@
-#
+# vim:foldmethod=marker
 # History {{{1
 HISTFILE=~/.histfile
 HISTSIZE=100000
-SAVEHIST=100000
+SAVEHIST=1000000
 setopt inc_append_history
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
@@ -17,9 +17,9 @@ bindkey "\e[3~" delete-char
 bindkey -M vicmd "\e[3~" delete-char
 
 export VISUAL=nvim
-export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
 export PATH=$PATH:$HOME/.local/share/bin
 export SUDO_PROMPT="$(tput setaf 1 bold)Password:$(tput sgr0) "
+export BAT_THEME="Monokai Extended"
 
 zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
@@ -39,44 +39,27 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cl="clear"
-alias open="xdg-open"
-alias susp="swaylock -f -c 000000 && systemctl suspend"
 alias sudo='sudo '
 alias sued='SUDO_EDITOR=nvim sudoedit'
+alias hgr="history 0 | grep"
 alias cat='bat -pp'
+alias vi='nvim'
 alias tree="tree -Ca"
 alias mkd="mkdir -p"
 alias du="du -sh"
-alias fh="feh -Fq --on-last-slide hold ."
-alias scr='grim -g "$(slurp)"'
 alias gitq='git add .; git commit -m "Update $(date +%F)"; git push'
 alias gits='git status'
 alias gitl='git --no-pager log --oneline --graph'
-alias hday='pkill "hyprsunset"'
-alias hnight='nohup hyprsunset -t 2700 > /dev/null 2>&1 &'
 
 # fzf {{{1
 source <(fzf --zsh)
-export FZF_COMPLETION_OPTS='--border --info=inline'
-export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'
-export FZF_COMPLETION_DIR_OPTS='--walker dir,follow'
-_fzf_compgen_path() {
-    fd --hidden --follow --exclude ".git" . "$1"
-}
-_fzf_compgen_dir() {
-    fd --type d --hidden --follow --exclude ".git" . "$1"
-}
-_fzf_comprun() {
-    local command=$1
-    shift
 
-    case "$command" in
-    cd) fzf --preview 'tree -C {} | head -200' "$@" ;;
-    export | unset) fzf --preview "eval 'echo \$'{}" "$@" ;;
-    ssh) fzf --preview 'dig {}' "$@" ;;
-    *) fzf --preview 'bat -n --color=always {}' "$@" ;;
-    esac
-}
+
+# Starship {{{1
+eval "$(starship init zsh)"
+
+# zoxide {{{1
+eval "$(zoxide init --cmd cd zsh)"
 
 # yazi {{{1
 function y() {
@@ -87,18 +70,6 @@ function y() {
     fi
     rm -f -- "$tmp"
 }
-
-# Starship {{{1
-eval "$(starship init zsh)"
-
-# zoxide {{{1
-eval "$(zoxide init --cmd cd zsh)"
-
-# bun {{{1
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$PATH:$BUN_INSTALL/bin"
-
 # Environment varibles {{{1
 if [ -d ~/.local-vars ]; then
     for f in ~/.local-vars/*; do
@@ -108,5 +79,3 @@ if [ -d ~/.local-vars ]; then
     done
     unset f
 fi
-
-export QSYS_ROOTDIR="/home/bwaargh/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/24.1/quartus/sopc_builder/bin"
