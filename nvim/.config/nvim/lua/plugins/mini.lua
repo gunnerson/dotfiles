@@ -21,21 +21,21 @@ return {
       return "%2l:%-2v"
     end
 
-    -- require('mini.pairs').setup()
+    require("mini.pairs").setup()
     --
-    require("mini.diff").setup {
-      delay = {
-        text_change = 2000,
-      },
-      mappings = {
-        apply = "",
-        reset = "",
-        textobject = "",
-        goto_first = "",
-        goto_prev = "",
-        goto_next = "",
-        goto_last = "",
-      },
-    }
+    -- require("mini.diff").setup {
+    --   delay = {
+    --     text_change = 2000,
+    --   },
+    --   mappings = {
+    --     apply = "",
+    --     reset = "",
+    --     textobject = "",
+    --     goto_first = "",
+    --     goto_prev = "",
+    --     goto_next = "",
+    --     goto_last = "",
+    --   },
+    -- }
   end,
 }

@@ -78,17 +78,17 @@ return {
             signs = not vt,
           }
         end, { desc = "toggle diagnostic" })
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          callback = function()
-            if client == nil then
-              return
-            end
-            if client.name == "ruff" then
-              vim.lsp.buf.code_action { context = { only = { "source.organizeImports" } }, apply = true }
-            end
-          end,
-          buffer = event.buffer,
-        })
+        -- vim.api.nvim_create_autocmd("BufWritePre", {
+        --   callback = function()
+        --     if client == nil then
+        --       return
+        --     end
+        --     if client.name == "ruff" then
+        --       vim.lsp.buf.code_action { context = { only = { "source.organizeImports" } }, apply = true }
+        --     end
+        --   end,
+        --   buffer = event.buffer,
+        -- })
       end,
     })
 
@@ -151,9 +151,9 @@ return {
       "shfmt",
       "codelldb",
       "clang-format",
+      "djlint",
     })
     require("mason-tool-installer").setup { ensure_installed = ensure_installed }
-    ---@diagnostic disable-next-line: missing-fields
     require("mason-lspconfig").setup {
       handlers = {
         function(server_name)
