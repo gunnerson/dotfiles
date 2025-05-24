@@ -10,7 +10,6 @@ vim.keymap.set("n", "<C-b>", "<cmd>:bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "<leader>bx", "<cmd>:w | %bd | e#<CR>", { desc = "Close all buffers except current" })
 vim.keymap.set("n", "<leader>bW", "<cmd>:w !sudo tee > /dev/null %<CR>", { desc = "Force write" })
 vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format, { desc = "Format buffer" })
-vim.keymap.set("n", "<leader>bo", "<cmd>:PyrightOrganizeImports<CR>", { desc = "PyrightOrganizeImports" })
 
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
