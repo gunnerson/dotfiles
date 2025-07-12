@@ -43,6 +43,10 @@ vim.keymap.set("x", "p", [["_dP]], { desc = "Paste without yanking" })
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank to clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>Y", [["+Y]], { desc = "Yank line to clipboard" })
 
+vim.keymap.set("n", "<leader>cm", "<cmd>:CMakeBuild<CR>", { desc = "CMake Build" })
+vim.keymap.set("n", "<leader>cd", "<cmd>:CMakeDebug<CR>", { desc = "CMake Debug" })
+vim.keymap.set("n", "<leader>cr", "<cmd>:CMakeRun<CR>", { desc = "CMake Run" })
+
 vim.keymap.set("n", "<leader>nh", function()
   Snacks.notifier.show_history()
 end, { desc = "Show Notification History" })

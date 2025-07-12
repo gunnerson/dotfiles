@@ -16,6 +16,7 @@ return {
       "stevearc/overseer.nvim",
       opts = {},
     },
+    { "Civitasv/cmake-tools.nvim", opts = {} },
     "theHamsta/nvim-dap-virtual-text",
   },
   keys = function(_, keys)
@@ -48,8 +49,6 @@ return {
   config = function()
     local dap = require "dap"
     local dapui = require "dapui"
-    local mason_registry = require "mason-registry"
-    local codelldb = mason_registry.get_package("codelldb"):get_install_path() .. "/codelldb"
 
     require("mason-nvim-dap").setup {
       -- Makes a best effort to setup the various debuggers with
@@ -107,7 +106,7 @@ return {
       type = "server",
       port = "${port}",
       executable = {
-        command = vim.fn.expand(codelldb),
+        command = vim.fn.expand "codelldb",
         args = { "--port", "${port}" },
       },
     }

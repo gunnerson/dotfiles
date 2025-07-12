@@ -18,7 +18,7 @@ bindkey -M vicmd "\e[3~" delete-char
 
 export VISUAL=nvim
 export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
-export PATH=$PATH:$HOME/.local/share/bin
+export PATH=$PATH:$HOME/.local/share/bin:/opt/intelFPGA/17.0/modelsim_ase/linuxaloem
 export SUDO_PROMPT="$(tput setaf 1 bold)Password:$(tput sgr0) "
 
 zstyle :compinstall filename '$HOME/.zshrc'
@@ -33,8 +33,8 @@ fi
 # Aliases {{{1
 alias rm='rm -i'
 alias mv='mv -i'
-alias ll="ls --color -lh"
-alias la="ls --color -lah"
+alias ll="ls -lh --color=auto"
+alias la="ls -lah --color=auto"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -109,4 +109,4 @@ if [ -d ~/.local-vars ]; then
     unset f
 fi
 
-export QSYS_ROOTDIR="/home/bwaargh/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/24.1/quartus/sopc_builder/bin"
+export QSYS_ROOTDIR="/opt/altera/24.1/quartus/sopc_builder/bin"
