@@ -16,6 +16,7 @@ return {
       "stevearc/overseer.nvim",
       opts = {},
     },
+    { "Civitasv/cmake-tools.nvim", opts = {} },
     "theHamsta/nvim-dap-virtual-text",
   },
   keys = function(_, keys)

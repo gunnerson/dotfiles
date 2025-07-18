@@ -26,6 +26,7 @@ return {
 
       require("mini.git").setup()
 
+      -- !!! Don't use: buggy
       -- require("mini.diff").setup {
       --   delay = {
       --     text_change = 2000,
@@ -43,4 +44,6 @@ return {
     end,
   },
   { "mg979/vim-visual-multi" },
+  -- Use this instead of diff
+  { "lewis6991/gitsigns.nvim" },
 }
