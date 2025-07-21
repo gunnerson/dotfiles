@@ -79,15 +79,14 @@ return {
           }
         end, { desc = "toggle diagnostic" })
         vim.api.nvim_create_autocmd("BufWritePre", {
+          pattern = "*.py",
           callback = function()
-            if client == nil then
-              return
-            end
-            if client.name == "ruff" then
-              vim.lsp.buf.code_action { context = { only = { "source.organizeImports" } }, apply = true }
-            end
+            vim.lsp.buf.code_action {
+              context = { only = { "source.organizeImports.ruff" } },
+              apply = true,
+            }
+            vim.lsp.buf.format { async = false } -- Optionally, format the buffer as well
           end,
-          buffer = event.buffer,
         })
       end,
     })
@@ -102,7 +101,7 @@ return {
       pyright = {
         settings = {
           pyright = {
-            -- disableOrganizeImports = true,
+            disableOrganizeImports = true,
           },
           -- python = {
           --   analysis = {
