@@ -45,5 +45,5 @@ return {
   },
   { "mg979/vim-visual-multi" },
   -- Use this instead of diff
-  { "lewis6991/gitsigns.nvim" },
+  -- { "lewis6991/gitsigns.nvim" },
 }
