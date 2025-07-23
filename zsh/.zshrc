@@ -34,8 +34,8 @@ fi
 # Aliases {{{1
 alias rm='rm -i'
 alias mv='mv -i'
-alias ll="ls --color -lh"
-alias la="ls --color -lah"
+alias ll="ls --color -lh --time-style=long-iso"
+alias la="ls --color -lah --time-style=long-iso"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
