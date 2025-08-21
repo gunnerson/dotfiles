@@ -22,3 +22,10 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.opt.relativenumber = false
   end,
 })
+
+vim.filetype.add {
+  extension = {
+    fs = "glsl",
+    vs = "glsl",
+  },
+}
