@@ -158,7 +158,7 @@ return {
         function(server_name)
           local server = servers[server_name] or {}
           server.capabilities = require("blink.cmp").get_lsp_capabilities()
-          require("lspconfig")[server_name].setup(server)
+          vim.lsp.config[server_name].setup(server)
         end,
       },
     }
