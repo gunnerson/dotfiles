@@ -48,6 +48,7 @@ vim.keymap.set("n", "<leader>P", [["+P]], { desc = "Paste clipboard before curso
 vim.keymap.set("x", "<leader>p", [["_d"+p]], { desc = "Paste clipboard" })
 vim.keymap.set("x", "<leader>P", [["_d"+P]], { desc = "Paste clipboard before cursor" })
 vim.keymap.set("n", "da", "v%d")
+vim.keymap.set("n", "cii", "lvh%hc")
 vim.keymap.set("n", "gs", "v%x%p", { desc = "Swap" })
 
 vim.keymap.set("n", "<leader>cm", ":CMakeBuild<CR>", { desc = "CMake Build" })
