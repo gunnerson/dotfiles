@@ -27,7 +27,7 @@ return { -- Autoformat
         lsp_format_opt = "fallback"
       end
       return {
-        timeout_ms = 500,
+        timeout_ms = 1000,
         lsp_format = lsp_format_opt,
       }
     end,
@@ -38,6 +38,8 @@ return { -- Autoformat
       javascript = { "prettierd", "prettier", stop_after_first = true },
       json = { "prettierd", "prettier", stop_after_first = true },
       css = { "prettierd", "prettier", stop_after_first = true },
+      kotlin = { "ktlint" },
+      sql = { "sql_formatter" },
     },
     formatters = {
       djlint = {

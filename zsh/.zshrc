@@ -17,10 +17,12 @@ bindkey "\e[3~" delete-char
 bindkey -M vicmd "\e[3~" delete-char
 
 export VISUAL=nvim
-export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
-export PATH=$PATH:$HOME/.local/share/bin
+export XCURSOR_PATH="${XCURSOR_PATH}:~/.local/share/icons"
+export PATH="$PATH:$HOME/.local/share/bin"
 export SUDO_PROMPT="$(tput setaf 1 bold)Password:$(tput sgr0) "
 export BAT_THEME="Monokai Extended"
+export ANDROID_HOME="/opt/android-sdk"
+export CHROME_EXECUTABLE="google-chrome-stable"
 
 zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit

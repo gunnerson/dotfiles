@@ -1,6 +1,6 @@
 font-size = 14
 window-decoration = false
 shell-integration = zsh
-shell-integration-features = ssh-env,ssh-terminfo,sudo
+shell-integration-features = ssh-env,sudo
 scrollback-limit = 4294967290
 theme = TokyoNight

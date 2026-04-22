@@ -122,6 +122,7 @@ return {
           },
         },
       },
+      -- kotlin_lsp = {},
       html = {},
       emmet_language_server = {},
       bashls = {
