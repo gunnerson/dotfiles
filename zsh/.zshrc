@@ -96,3 +96,6 @@ if [ -d ~/.local-vars ]; then
     done
     unset f
 fi
+
+# NVM {{{1
+source /usr/share/nvm/init-nvm.sh

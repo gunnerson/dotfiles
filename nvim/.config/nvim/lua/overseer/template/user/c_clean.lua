@@ -1,13 +1,13 @@
 return {
-  name = 'Clean',
+  name = "Clean",
   builder = function()
-    local file = vim.fn.expand '%:p:r'
+    local file = vim.fn.expand "%:p:r"
     return {
-      cmd = { 'rm' },
+      cmd = { "rm" },
       args = { file },
     }
   end,
   condition = {
-    filetype = { 'c', 'cpp' },
+    -- filetype = { 'c', 'cpp' },
   },
 }

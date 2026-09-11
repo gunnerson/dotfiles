@@ -132,6 +132,7 @@ return {
       tailwindcss = {},
       dockerls = {},
       prettierd = {},
+      zls = {},
       lua_ls = {
         settings = {
           Lua = {
